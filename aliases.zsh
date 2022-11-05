@@ -9,6 +9,7 @@ function cl {
     "cd" "$1" || return
   fi
   "exa"
+}
 
 # common directories
 alias work="cd $HOME/Workspace"
