@@ -1,16 +1,13 @@
-source /home/rihards/.config/zsh/.aliases.zsh
+#!/usr/bin/env zsh
 
-_comp_options+=(globdots) # With hidden files
-source /home/rihards/.config/zsh/completion.zsh
+# ZSH
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/completion.zsh
+source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-fpath=(/home/rihards/.config/zsh/ $fpath)
-autoload -Uz prompt.zsh; prompt.zsh
+# Starship
+eval "$(starship init zsh)"
 
-autoload -U add-zsh-hook
-
-source $(dirname $(gem which colorls))/tab_complete.sh
-
-source /home/rihards/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source /home/rihards/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+# NVM
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
